@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/main.css">
+	<title>Dash</title>
+</head>
+
+<body>
+
+	<div class="content">
+		<ul class="breadcrumbs">
+			<li> <a href="/"> Dash</a> </li>
+			<li> / </li>
+			<li> <a href="/aero">aero</a> </li>
+			<li> / </li>
+			<li> Update </li>
+		</ul>
+		<h1> Edit  </h1>
+		<h3>
+			<%- message %>
+				<form method="post" class="edit_form">
+
+					<label for="battery">Update BatteryType: </label>
+					<select class="form-control" name="BatteryType" id="battery" required>
+						<% battType.forEach(battery => { %>
+							<option value="<%= battery.BatteryTypes %>" <%= battery.BatteryTypes === AeroTeam.BatteryType ? 'selected' : '' %>>
+								<%= battery.BatteryTypes %>
+							</option>
+						<% }); %>
+					</select>
+
+					<p>  </p>
+					<label for="motorsize">Update MotorSize: </label>
+					<select class="form-control" name="MotorSize" id="motorsize" required>
+						<% motorSi.forEach( motorsize => { %>
+							<option value="<%= motorsize.MotorSizes %>" <%= motorsize.MotorSizes === AeroTeam.MotorSizes ? 'selected' : '' %>>
+								<%= motorsize.MotorSizes %>
+							</option>
+						<% }); %>
+					</select>
+
+					<p>  </p>
+
+					<label for="motorTypes">Update MotorType: </label>
+					<select class="form-control" name="MotorType" id="motorTypes" required>
+						<% motorTy.forEach(motorTypes => { %>
+							<option value="<%= motorTypes.MotorTypes %>" <%= motorTypes.MotorTypes === AeroTeam.MotorTypes ? 'selected' : '' %>>
+								<%= motorTypes.MotorTypes %>
+							</option>
+						<% }); %>
+					</select>
+
+					<p> <label for="ResearchOnParts"> Update YourResearch: </label> 
+						<input type="text" value="<%= AeroTeam.ResearchOnParts %>"name
+						="ResearchOnParts"required>  </p>
+
+					<input type="submit" value="Update">
+
+
+
+
+				</form>
+				
+		</h3>
+	</div>
+
+</body>
+
+</html>

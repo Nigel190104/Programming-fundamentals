@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/main.css">
+	<title>Dash</title>
+</head>
+
+<body>
+
+	<div class="content">
+		<ul class="breadcrumbs">
+			<li> <a href="/"> Dash</a> </li>
+			<li> / </li>
+			<li> stuAeros </li>
+		</ul>
+		<h1> stuAeros </h1>
+		<h1> 1s and 0's here represent true and false just to keep 
+			that in mind for all fields in this table</h1>
+		<section class="dataTable">
+			<table class="data">
+				<tr>
+					<th>aeroTeam ID</th>
+					<th>ResearchOnParts</th>
+					<th>SimulatorySoftwareRan</th>
+					<th> TailSize </th>
+					<th> WingSize </th>
+					<th> DistanceBetween </th>
+					<th> BatteryType </th>
+					<th> FirstSegRouteFOllowed </th>
+					<th> SecondSegRouteFOllowed </th>
+					<th> ThirdSegRouteFOllowed </th>
+					<th> PathTestResult </th>
+					<th> MotorSize </th>
+					<th> MotorType </th>
+				</tr>
+				<tr>
+					<% TeamAero.forEach(stuAero=> { %>
+					<tr>
+						<td><%- stuAero.URN %></td>
+						<td><%- stuAero.ResearchOnParts %></td>
+						<td><%- stuAero.SimulatorySoftwareRan %></td>
+						<td><%- stuAero.TailSize %></td>
+						<td><%- stuAero.WingSize %></td>
+						<td><%- stuAero.DistanceBetween %></td>
+						<td><%- stuAero.BatteryType %></td>
+						<td><%- stuAero.FirstSeg %></td>
+						<td><%- stuAero.SecondSeg %></td>
+						<td><%- stuAero.ThirdSeg %></td>
+						<td><%- stuAero.PathTestResult %></td>
+						<td><%- stuAero.MotorSize %></td>
+						<td><%- stuAero.MotorType %></td>
+						<td>
+						<a href="/aero/edit/<%- stuAero.URN %>"> Edit </a>
+						<a href="/aero/view/<%- stuAero.URN %>"> View </a>
+						</td>
+					</tr>
+						<% }) %>
+			</table>
+		</section>
+	</div>
+
+</body>
+
+</html>

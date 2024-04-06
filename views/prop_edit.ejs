@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/main.css">
+	<title>Dash</title>
+</head>
+
+<body>
+
+	<div class="content">
+		<ul class="breadcrumbs">
+			<li> <a href="/"> Dash</a> </li>
+			<li> / </li>
+			<li> <a href="/prop">propulsion</a> </li>
+			<li> / </li>
+			<li> Update </li>
+		</ul>
+		<h1> Edit</h1>
+		<h3>
+			<%= message %>
+				<form method="post" class="edit_form">
+				<label for="bool">Update done_prot_wiring: </label>
+                <select class="form-control" name="done_prot_wiring" id="bool" required>
+                    <% boolValues.forEach(bool => { %>
+                        <option value="<%= bool.possibleBool %>" <%= prop.done_prot_wiring === bool.possibleBool ? 'selected' : '' %>>
+                            <%= bool.possibleBool %>
+                        </option>
+                    <% }); %>
+                </select>
+				<p>  </p>
+				<label for="bool">Update concept_plane_designed: </label>
+                <select class="form-control" name="concept_plane_designed" id="bool" required>
+                    <% boolValues.forEach(bool => { %>
+                        <option value="<%= bool.possibleBool %>" <%= prop.concept_plane_designed === bool.possibleBool ? 'selected' : '' %>>
+                            <%= bool.possibleBool %>
+                        </option>
+                    <% }); %>
+                </select>
+				<p>for dummy variable regradless of user input will not be updated to the database  </p>
+				<p> <label for="ResearchOnParts"> Dummy variable to allow for update: </label> 
+					<input type="text" value="<%= AeroTeam.ResearchOnParts %>"name
+					="ResearchOnParts"required>  </p>
+
+
+					<input type="submit" value="Update">
+				</form>
+		</h3>
+	</div>
+
+</body>
+
+</html>
